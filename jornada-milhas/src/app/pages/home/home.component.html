@@ -7,17 +7,10 @@
   <h2>Promoções</h2>
   <app-form-busca></app-form-busca>
   <div class="car-wrapper">
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
+    <app-card-busca *ngFor="let item of promocoes" [promocao]="item" />
   </div>
   <h2>Depoimentos</h2>
   <div class="car-wrapper">
-    <app-card-depoimentos></app-card-depoimentos>
-    <app-card-depoimentos></app-card-depoimentos>
     <app-card-depoimentos></app-card-depoimentos>
   </div>
 </app-containar>
