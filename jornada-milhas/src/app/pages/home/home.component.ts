@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Promocao } from 'src/app/core/interface/Promocao';
 import { PromocaoService } from 'src/app/core/services/promocao.service';
 
 @Component({
@@ -8,16 +7,15 @@ import { PromocaoService } from 'src/app/core/services/promocao.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  promocoes: Promocao[] = [];
+  constructor( private servicoPromocao: PromocaoService ) {
 
-  constructor(private promocaoService: PromocaoService) { }
-
+  }
   ngOnInit(): void {
-    this.promocaoService.listar()
+    this.servicoPromocao.listar()
       .subscribe(
         resposta => {
-          this.promocoes = resposta;
+          console.log(resposta)
         }
-    )
+      )
   }
 }

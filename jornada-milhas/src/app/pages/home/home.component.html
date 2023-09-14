@@ -1,22 +1,17 @@
-
-<app-banner
-  src="assets/imagens/banner-homepage.png"
-  alt="Banner da aplicação jornada">
-</app-banner>
-<app-containar>
-  <h2>Promoções</h2>
-  <app-form-busca></app-form-busca>
-  <div class="car-wrapper">
-    <app-card-busca *ngFor="let item of promocoes" [promocao]="item" />
-  </div>
-  <h2>Depoimentos</h2>
-  <div class="car-wrapper">
-    <app-card-depoimentos></app-card-depoimentos>
-  </div>
-</app-containar>
-
-<app-banner
-  src="assets/imagens/banner-homepage-rodape.png"
-  alt="Banner da aplicação jornada">
-</app-banner>
-<app-footer></app-footer>
+<section class="homepage">
+  <app-banner
+    src="assets/imagens/banner-homepage.png"
+    alt="Banner da aplicação Jornada"
+  ></app-banner>
+  <app-container>
+    <app-form-busca></app-form-busca>
+    <h2>Promoções</h2>
+    <app-promocoes />
+    <h2>Depoimentos</h2>
+    <app-depoimentos />
+  </app-container>
+  <app-banner
+    src="assets/imagens/banner-homepage-rodape.png"
+    alt="Banner da aplicação Jornada"
+  ></app-banner>
+</section>
