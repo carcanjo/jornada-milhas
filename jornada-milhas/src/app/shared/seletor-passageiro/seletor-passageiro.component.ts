@@ -8,19 +8,26 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
+      // forwardRef indica que essa classe que vai ser usada não existe em tempo de compilação e vai ser usada depois
       useExisting: forwardRef(() => SeletorPassageiroComponent),
+      //  multi: true quer dizer que esse componente pode ser usado em multiplos lugares
       multi: true
     }
   ]
 })
+  //ControlValueAccessor responsável para receber um controle (FormControl) de outro formulário
 export class SeletorPassageiroComponent implements ControlValueAccessor {
 
   @Input() titulo: string = ''
   @Input() subtitulo: string = ''
 
   value: number = 0
-  onChange = (val: number) => {}
-  onTouch = () => {}
+  onChange = (val: number) => {
+
+  }
+  onTouch = () => {
+
+  }
 
   writeValue(val: any): void {
     this.value = val
@@ -32,7 +39,7 @@ export class SeletorPassageiroComponent implements ControlValueAccessor {
     this.onTouch = fn
   }
   setDisabledState?(isDisabled: boolean): void {
-    
+
   }
 
   incrementar () {
@@ -48,5 +55,4 @@ export class SeletorPassageiroComponent implements ControlValueAccessor {
       this.onTouch()
     }
   }
-
 }
